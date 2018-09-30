@@ -1,0 +1,25 @@
+#Python 2.7
+#quickest solution for sum of arithmetic series 1+3+5+7+...+n
+
+import time
+
+i = 0
+n = 45665981
+s1 = 0
+
+start1 = time.time()
+for i in range (1, n, 2):
+    s1 +=i
+    # print i
+fin1 = time.time()
+print s1  #sum = 521345432340100
+
+start2 = time.time()
+if n%2 != 0:
+    n -= 1
+s2 = (n * 0.25) * n
+fin2 = time.time()
+print int(s2)   #sum = 521345432340100
+
+print (fin1-start1)   #3.57000017166 sec
+print (fin2-start2)   #0.0 sec
